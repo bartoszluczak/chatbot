@@ -1,0 +1,40 @@
+.converation-window {
+      display: flex;
+      justify-content: space-between;
+      height: 100vh;
+      flex-direction: column;
+      align-items: center;
+}
+
+.conversation-history {
+  width: 60%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  margin: 1rem 0;
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    display: flex;
+  }
+}
+
+.input-message-container {
+  display: flex;
+  background-color: grey;
+  padding: 0.75rem 1rem 0 1rem;
+  border-radius: 1rem 1rem 0 0;
+
+  button {
+    margin-left: 2rem;
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+
+

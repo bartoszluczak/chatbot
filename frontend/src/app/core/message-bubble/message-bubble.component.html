@@ -1,0 +1,23 @@
+<div class="message-bubble">
+  <span>{{message.role}} </span>
+  <div class="message-content">
+    <p>{{message.content}}</p>
+  </div>
+  @if (message.role.toLowerCase() === 'system') {
+    <div class="system-message-options">
+      <button class="icon-btn" [class.activeMark]="responseMark() === 'correct' " (click)="handelMarking('correct')">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">thumb_up_off_alt</mat-icon>
+      </button>
+
+      <button  class="icon-btn" [class.activeMark]="responseMark() === 'not_correct' " (click)="handelMarking('not_correct')">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="thumb_down_off_alt"></mat-icon>
+      </button>
+
+      <button class="icon-btn">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="stop"></mat-icon>
+      </button>
+
+    </div>
+  }
+
+</div>

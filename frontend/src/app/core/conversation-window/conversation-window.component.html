@@ -1,0 +1,27 @@
+<div class="converation-window">
+  <div class="conversation-history">
+    @if (messages.length > 0) {
+      <ul>
+        @for (message of messages; track message.id) {
+          <li [style.justify-content]="message.role === 'user' ? 'flex-end' : 'flex-start' " >
+            <app-message-bubble [message]="message" class="message" />
+          </li>
+        }
+      </ul>
+    } @else {
+      <p>There are currently no messages to display</p>
+    }
+
+  </div>
+  <div class="input-message-container">
+    <form class="input-form">
+      <mat-form-field>
+        <mat-label>Write your question</mat-label>
+        <input matInput  [(ngModel)]="userMessage" type="text" name="userMessage">
+      </mat-form-field>
+    </form>
+    <button mat-fab aria-label="Send user message" [disabled]="userMessage.length === 0" (click)="sendMessage()">
+      <mat-icon>send</mat-icon>
+    </button>
+  </div>
+</div>
